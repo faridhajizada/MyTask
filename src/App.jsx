@@ -1,4 +1,4 @@
-import React, { useState, lazy } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Post = lazy(() => import("./pages/Post/Post"));
@@ -17,10 +17,12 @@ function App() {
         <div className="dashboard-container">
           <Sidebar isOpen={isSidebarOpen} />
           <main className="content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/posts" element={<Post />} />
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/posts" element={<Post />} />
+              </Routes>
+            </Suspense>
           </main>
         </div>
       </div>

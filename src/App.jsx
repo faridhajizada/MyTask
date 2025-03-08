@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Main from "./pages/Main/Main";
+import Post from "./pages/Post/Post";
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Post />} />
       </Routes>
     </BrowserRouter>
   );

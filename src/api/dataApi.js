@@ -1,8 +1,12 @@
 import { baseQuery } from "./api";
 
 export const dataApi = baseQuery.injectEndpoints({
-  endpoints: (builder) => ({}),
-  overrideExisting: false,
+  endpoints: (builder) => ({
+    getPosts: builder.query({ query: () => "/posts" }),
+    getComments: builder.query({
+      query: (postId) => `/posts/${postId}/comments`,
+    }),
+  }),
 });
 
-export const {} = dataApi;
+export const { useGetPostsQuery, useGetCommentsQuery } = dataApi;

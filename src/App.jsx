@@ -2,6 +2,7 @@ import React, { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Post = lazy(() => import("./pages/Post/Post"));
+const Table = lazy(() => import("./pages/Table/Table"));
 import Navbar from "./components/Dashboard/Navbar/Navbar";
 import Sidebar from "./components/Dashboard/Sidebar/Sidebar";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -20,6 +21,7 @@ function App() {
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/table-list" element={<Table />} />
                 <Route path="/posts" element={<Post />} />
               </Routes>
             </Suspense>

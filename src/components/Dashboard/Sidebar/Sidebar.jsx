@@ -10,6 +10,9 @@ function Sidebar({ isOpen }) {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/table-list">Table List</Link>
+        </li>
+        <li>
           <Link to="/posts">Posts</Link>
         </li>
       </ul>

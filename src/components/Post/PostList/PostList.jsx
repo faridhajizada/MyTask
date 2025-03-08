@@ -3,17 +3,23 @@ import { useGetPostsQuery, useGetCommentsQuery } from "./../../../api/dataApi";
 import "./PostList.scss";
 
 function PostList() {
-  const { data: posts, error } = useGetPostsQuery();
+  const [serverLimit, setServerLimit] = useState(5);
+
+  const { data: posts, error } = useGetPostsQuery(serverLimit);
   const [openPostId, setOpenPostId] = useState(null);
 
   const toggleComments = (postId) => {
     setOpenPostId(openPostId === postId ? null : postId);
   };
 
+  const loadMore = () => {
+    setServerLimit((l) => l + 5);
+  };
+
   if (error) return <p>Error...</p>;
 
   return (
-    <section className="post-list">
+    <section className="post-list ">
       <div className="container mt-4">
         <h1 className="text-center mb-4">Posts</h1>
         <div className="row">
@@ -34,6 +40,11 @@ function PostList() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-4">
+          <button className="btn btn-warning" onClick={loadMore}>
+            Load More
+          </button>
         </div>
       </div>
     </section>

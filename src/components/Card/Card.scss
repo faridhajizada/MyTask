@@ -1,0 +1,48 @@
+#card {
+  .card-item {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 16px;
+    margin: 10px 0;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+  .card-item:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+  .users {
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+  }
+
+  .sales {
+    background: linear-gradient(135deg, #ff9800, #ff7043);
+  }
+
+  .orders {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+  }
+  .delivery {
+    background: linear-gradient(135deg, #f06292, #ec407a);
+  }
+}

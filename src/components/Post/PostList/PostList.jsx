@@ -17,7 +17,7 @@ function PostList() {
       <div className="container mt-4">
         <h1 className="text-center mb-4">Posts</h1>
         <div className="row">
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <div key={post.id} className="col-12">
               <div className="post-card">
                 <h3>
@@ -45,7 +45,7 @@ function Comments({ postId }) {
 
   return (
     <ul className="comments-list">
-      {comments.map((comment) => (
+      {comments?.map((comment) => (
         <li key={comment.id}>
           <p className="comment-title">{comment.name}</p>
           <p className="comment-body">{comment.body}</p>

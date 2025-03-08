@@ -1,0 +1,29 @@
+.sidebar {
+  width: 200px;
+  background-color: #f8f9fa;
+  height: 100vh;
+  padding: 15px;
+  position: fixed;
+  left: -200px;
+  transition: 0.3s;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 500;
+}

@@ -1,0 +1,30 @@
+#table {
+  padding: 40px 0;
+
+  .list {
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(20, 20, 20, 0.1);
+    background: white;
+    padding: 0;
+  }
+
+  table {
+    width: 100%;
+
+    th,
+    td {
+      padding: 4px;
+    }
+
+    thead {
+      background: #333;
+      color: white;
+    }
+
+    tbody tr {
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+  }
+}
